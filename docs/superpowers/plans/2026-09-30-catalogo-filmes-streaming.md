@@ -38,6 +38,24 @@
 - Commits convencionais (`feat:`, `test:`, `chore:`, `ci:`, `docs:`), terminando com `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
 - Os testes unitários ficam ao lado do código (`src/**/*.test.ts(x)`), e os E2E em `e2e/`.
 
+## Fluxo de Git e PRs (decidido com o usuário)
+
+- Repositório **público** `catalogo-filmes-streaming` no GitHub, criado logo após os commits da Task 1: `gh repo create catalogo-filmes-streaming --public --source . --remote origin`. Em seguida, `main` recebe só os commits de docs (spec e plano), e o setup vai pelo PR 1.
+- Um PR por funcionalidade, cada branch criada a partir da `main` atualizada:
+
+| PR | Branch | Tarefas |
+|---|---|---|
+| 1 | `chore/setup` | 1 |
+| 2 | `feat/tmdb-client` | 2, 3, 4 |
+| 3 | `feat/home` | 5 |
+| 4 | `feat/filtros` | 6 |
+| 5 | `feat/detalhes` | 7 |
+| 6 | `test/e2e-deploy` | 8, 9 (passos 1–2) |
+
+- Ao fim de cada PR: `git push -u origin <branch>`, `gh pr create --base main` (descrição curta terminando com `🤖 Generated with [Claude Code](https://claude.com/claude-code)`) e `gh pr checks --watch`.
+- **Os PRs ficam abertos.** O usuário revisa cada um e autoriza o merge. Só depois disso: `gh pr merge --squash --delete-branch`, `git checkout main && git pull`, e a próxima branch.
+- Os passos 3 a 5 da Task 9 (Vercel) rodam depois do merge do PR 6. A criação do repositório já foi feita após a Task 1.
+
 ## Review Focus
 
 1. **Parâmetro repetido na URL** (`?page=2&page=3`): o Next entrega um array. O esperado é usar o primeiro valor, sem quebrar. O teste fica na Task 2.
@@ -2376,14 +2394,9 @@ git commit -m "docs: README com setup e scripts
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ```
 
-- [ ] **Step 3: Criar o repositório no GitHub (confirmar com o usuário)**
+- [ ] **Step 3: Confirmar o CI do PR 6 e aguardar o merge autorizado pelo usuário**
 
-```bash
-gh repo create <nome-escolhido> --public --source . --push
-gh run watch
-```
-
-Esperado: os jobs `check` e `e2e` ficam verdes.
+O repositório já existe (criado após a Task 1). Rode `gh pr checks --watch`. Esperado: os jobs `check` e `e2e` ficam verdes. Depois que o usuário autorizar, faça o merge e siga na `main`.
 
 - [ ] **Step 4: Ligar à Vercel (confirmar com o usuário)**
 
