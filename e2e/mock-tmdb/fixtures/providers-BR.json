@@ -1,0 +1,7 @@
+{
+  "results": [
+    { "provider_id": 8, "provider_name": "Netflix", "logo_path": null, "display_priority": 1, "display_priorities": { "BR": 1 } },
+    { "provider_id": 119, "provider_name": "Amazon Prime Video", "logo_path": null, "display_priority": 2, "display_priorities": { "BR": 2 } },
+    { "provider_id": 337, "provider_name": "Disney Plus", "logo_path": null, "display_priority": 3, "display_priorities": { "BR": 3 } }
+  ]
+}
