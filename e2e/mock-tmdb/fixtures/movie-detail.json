@@ -1,0 +1,32 @@
+{
+  "id": 550,
+  "title": "Clube da Luta",
+  "overview": "Um homem deprimido conhece um vendedor de sabão e juntos fundam um clube de luta.",
+  "poster_path": null,
+  "backdrop_path": null,
+  "release_date": "1999-10-15",
+  "runtime": 139,
+  "vote_average": 8.4,
+  "genres": [{ "id": 18, "name": "Drama" }],
+  "credits": {
+    "cast": [
+      { "id": 819, "name": "Edward Norton", "character": "Narrador", "profile_path": null, "order": 0 },
+      { "id": 287, "name": "Brad Pitt", "character": "Tyler Durden", "profile_path": null, "order": 1 }
+    ]
+  },
+  "videos": {
+    "results": [{ "key": "e2eTrailerKey", "site": "YouTube", "type": "Trailer", "iso_639_1": "pt" }]
+  },
+  "watch/providers": {
+    "results": {
+      "BR": {
+        "link": "https://www.themoviedb.org/movie/550/watch?locale=BR",
+        "flatrate": [{ "provider_id": 8, "provider_name": "Netflix", "logo_path": null }]
+      },
+      "US": {
+        "link": "https://www.themoviedb.org/movie/550/watch?locale=US",
+        "flatrate": [{ "provider_id": 15, "provider_name": "Hulu", "logo_path": null }]
+      }
+    }
+  }
+}
